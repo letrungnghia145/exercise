@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover side nav</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        #sidenav a {
+            position: absolute;
+            text-decoration: none;
+            width: 100px;
+            color: white;
+            padding: 10px;
+            margin-left: -80px;
+            transition: 0.5s;
+            font-size: 20px;
+        }
+
+        #tab1 {
+            top: 50px;
+            background-color: green;
+        }
+
+        #tab2 {
+            top: 100px;
+            background-color: red;
+        }
+
+        #tab3 {
+            top: 150px;
+            background-color: blue;
+        }
+
+        #tab4 {
+            top: 200px;
+            background-color: grey;
+        }
+
+        #tab5 {
+            top: 250px;
+            background-color: cyan;
+        }
+
+        #sidenav a:hover {
+            margin-left: 0px;
+        }
+        #content{
+            margin-left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidenav">
+        <a href="#" id="tab1">Link 1</a>
+        <a href="#" id="tab2">Link 2</a>
+        <a href="#" id="tab3">Link 3</a>
+        <a href="#" id="tab4">Link 4</a>
+        <a href="#" id="tab5">Link 5</a>
+    </div>
+    <div id="content">
+        <h1>Side nav button</h1>
+        <p>Hoverable</p>
+    </div>
+</body>
+
+</html>

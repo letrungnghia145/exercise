@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom checkbox art</title>
+    <style>
+        * {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .custom-checkbox-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-checkbox-art {
+            position: relative;
+            height: 50px;
+            width: 140px;
+            -webkit-appearance: none;
+            /* background-color: rgb(218, 218, 218); */
+            outline: none;
+            cursor: pointer;
+        }
+
+
+        input[type="checkbox"]::before {
+            content: "NO";
+            background-color: black;
+            left: 0;
+        }
+
+        input[type="checkbox"]::after {
+            content: "YES";
+            background-color: rgb(218, 218, 218);
+            right: 0;
+        }
+
+        input[type="checkbox"]::before,
+        input[type="checkbox"]::after {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: white;
+            transition: .8s;
+            top: 0;
+        }
+
+        input:checked[type="checkbox"]::after {
+            background-color: black;
+        }
+
+        input:checked[type="checkbox"]::before {
+            background-color: rgb(218, 218, 218);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="custom-checkbox-container">
+        <input type="checkbox" class="custom-checkbox-art">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video background</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        .video-background {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: -99;
+        }
+
+        .video-foreground,
+        .video-foreground iframe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        @media (min-aspect-ratio: 16/9) {
+            .video-foreground {
+                height: 300%;
+                top: -100%;
+            }
+        }
+
+        @media (max-aspect-ratio: 16/9) {
+            .video-foreground {
+                width: 300%;
+                left: -100%;
+            }
+        }
+
+        .video-info {
+            z-index: 1;
+            color: white;
+            border: 5px solid white;
+            position: absolute;
+            padding: 10px;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* .video{
+            position: relative;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            
+        }
+        .video iframe{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        } */
+        #control-button {
+            padding: 10px;
+            margin-top: 3px;
+            outline: none;
+        }
+
+        #control-button:hover {
+            background-color: grey;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-background">
+        <div class="video-foreground">
+            <iframe id="video"
+                src="https://www.youtube-nocookie.com/embed/bON-KPiiNCk?enablejsapi=1&html5=1&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=bON-KPiiNCk"
+                frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <div class="video-info">
+        <h1 id="video-info-header">Background video</h1>
+        <p id="video-info-content">
+            This is a video demo 4K. It was owned by LG.
+        </p>
+        <button id="control-button">PAUSE</button>
+    </div>
+    <!-- <div class="video">
+        <iframe
+                src="https://www.youtube-nocookie.com/embed/bON-KPiiNCk?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1&playlist=bON-KPiiNCk"
+                frameborder="0" allowfullscreen></iframe>
+    </div> -->
+    <script src="https://www.youtube.com/player_api">
+
+    </script>
+    <script>
+        // global variable for the player
+        var player;
+
+        // this function gets called when API is ready to use
+        function onYouTubePlayerAPIReady() {
+            // create the global player from the specific iframe (#video)
+            player = new YT.Player('video', {
+                events: {
+                    // call this function when player is ready to use
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+
+            // bind events
+            // var playButton = document.getElementById("play-button");
+            // playButton.addEventListener("click", function () {
+            //     player.playVideo();
+            // });
+
+            var controlButton = document.getElementById("control-button");
+            controlButton.addEventListener("click", function () {
+                toggle(controlButton);
+            });
+            function toggle(button) {
+                if (button.innerHTML === "PAUSE") {
+                    player.pauseVideo();
+                    button.innerHTML = "PLAY";
+                } else if (button.innerHTML === "PLAY") {
+                    player.playVideo();
+                    button.innerHTML = "PAUSE";
+                }
+            }
+            // var stopButton = document.getElementById("stop-button");
+            // stopButton.addEventListener("click", function () {
+            //     player.stopVideo();
+            // });
+
+        }
+    </script>
+</body>
+
+</html>

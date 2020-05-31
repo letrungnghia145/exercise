@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panther running animation</title>
+    <style>
+        *{
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html, body{
+            height: 100%;
+            width: 100%;
+            /* background: #222; */
+        }
+        .center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .sprite-animation{
+            background-image: url('https://w0.pngwave.com/png/667/424/horse-sprite-pixel-art-animation-sprite-png-clip-art.png');
+            width: calc(1568px/7);
+            height: calc(912px/6);
+            /* background-size: 500px 500px; */
+            animation: animate 1s steps(7) infinite;
+        }
+        @keyframes animate{
+            from{
+                background-position: 0;
+            }
+            to{
+                background-position: -1568px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="center">
+        <div class="sprite-animation"></div>
+    </div>
+</body>
+</html>

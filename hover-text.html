@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover text art</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            padding: 100%;
+        }
+
+        * {
+            padding: 0;
+            border: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .hover-text-art {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            text-transform: uppercase;
+            font-size: 58px;
+            color: #ccc;
+            cursor: pointer;
+        }
+
+        .hover-text-art::before {
+            overflow: hidden;
+            content: attr(hover-text-art);
+            position: absolute;
+            color: brown;
+            top: 0;
+            left: 0;
+            width: 0%;
+            white-space: nowrap;
+        }
+
+        .hover-text-art:hover::before {
+            transition: 1.5s;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="hover-text-art" hover-text-art="Hover text art">Hover text art</h1>
+</body>
+
+</html>

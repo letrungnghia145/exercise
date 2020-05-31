@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulse</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            border: 0;
+            box-sizing: border-box;
+        }
+
+        .pulse {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ccc;
+            text-decoration: none;
+            font-size: 30px;
+            background-color: rgb(219, 125, 18);
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            animation: pulsing 3s linear;
+            animation-iteration-count: infinite;
+            /* box-shadow: 0 0 0 0px rgba(255, 144, 17, 0.4); */
+        }
+        @keyframes pulsing {
+            0%{ box-shadow: 0 0 0 0px rgb(238, 189, 134);}
+            25%{ box-shadow: 0 0 0 20px rgb(231, 197, 157);}
+            /* 25%{ box-shadow: 0 0 0 0px rgb(238, 207, 173);} */
+            70%{ box-shadow: 0 0 0 30px rgb(238, 207, 173);}
+            100%{ box-shadow: 0 0 0 0px rgb(238, 189, 134);}
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="pulse">
+        pulse
+    </a>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <style>
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            padding: 0;
+            border: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        .parallax {
+            position: relative;
+            background-image: url('https://www.ecopetit.cat/wpic/mpic/27-270872_fluid-wallpaper-4k.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            background-position: center;
+        }
+        .parallax-text{
+            position: absolute;
+            color: white;
+            border: 5px solid white;
+            padding: 10px 30px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            font-size: 48px;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parallax">
+        <h1 class="parallax-text">Parallax</h1>
+    </div>
+    <!-- <div>Some text</div> -->
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
+        of Lorem Ipsum.
+    </p>
+    <div class="parallax">
+        <h1 class="parallax-text">Parallax</h1>
+    </div>
+    <div style="margin-top: 1000px;">Some text</div>
+</body>
+
+</html>
